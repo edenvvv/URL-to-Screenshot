@@ -12,8 +12,8 @@ const requestListener = function (req, res) {
   const s = new Screenshot(input_url.url)
     .capture()
     .then(img => {
-      fs.writeFileSync(__dirname + '/video.png', img);
-      output[key] = __dirname + '/video.png';
+      fs.writeFileSync(__dirname + '/img.png', img);
+      output[key] = __dirname + '/img.png';
       var json = JSON.stringify(output);
       fs.writeFile('output.json', json, 'utf8', function (err) {
         if (err) throw err;
